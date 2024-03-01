@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b31tvaochi0ss"]
+
+[ext_resource type="Script" path="res://GridClientNode2D.gd" id="1_23t10"]
+[ext_resource type="Texture2D" uid="uid://c7yq8ulmsv6r8" path="res://icon.svg" id="2_nqfol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5wq3"]
+size = Vector2(37.73, 38.175)
+
+[node name="GridClientNode2D" type="Node2D"]
+script = ExtResource("1_23t10")
+_shape = SubResource("RectangleShape2D_f5wq3")
+update_mode = 1
+debug_color = Color(0, 0.6, 0.690196, 0.247059)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.341176)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_nqfol")

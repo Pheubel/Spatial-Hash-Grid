@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://brleao5puf2bs"]
+
+[ext_resource type="Script" path="res://SpatialHashGridNode2d.gd" id="1_4rdyc"]
+[ext_resource type="PackedScene" uid="uid://b31tvaochi0ss" path="res://test_client.tscn" id="2_jv0an"]
+[ext_resource type="Script" path="res://pointer.gd" id="3_g0kfw"]
+[ext_resource type="Script" path="res://follow.gd" id="3_rcso8"]
+
+[sub_resource type="Curve2D" id="Curve2D_3mxcy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 209, 98, 0, 0, 0, 0, 277, 113, 0, 0, 0, 0, 322, 150, 0, 0, 0, 0, 335, 210, 0, 0, 0, 0, 278, 287, 0, 0, 0, 0, 191, 221, 0, 0, 0, 0, 156.036, 338.479, 0, 0, 0, 0, -73.6575, 378.616, 0, 0, 0, 0, 45, 219, 0, 0, 0, 0, 92, 131, 0, 0, 0, 0, 209, 98)
+}
+point_count = 11
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvstb"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mob5v"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(129, 465)
+rotation = -1.55509
+
+[node name="SpatialHashGridNode2d" type="Node2D" parent="."]
+position = Vector2(334.367, 20.7511)
+rotation = 0.118682
+script = ExtResource("1_4rdyc")
+_size = Vector2(800, 400)
+_cell_size = Vector2(80, 80)
+_debug_draw_always = true
+
+[node name="Path2D" type="Path2D" parent="SpatialHashGridNode2d"]
+position = Vector2(-241.665, 28.3012)
+curve = SubResource("Curve2D_3mxcy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SpatialHashGridNode2d/Path2D"]
+position = Vector2(324.088, 224.741)
+rotation = 2.20803
+progress = 207.63
+script = ExtResource("3_rcso8")
+speed = 30.0
+
+[node name="GridClientNode2D" parent="SpatialHashGridNode2d/Path2D/PathFollow2D" instance=ExtResource("2_jv0an")]
+update_mode = 2
+
+[node name="GridClientNode2D" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-323.346, 175.909)
+rotation = 1.40848
+scale = Vector2(1.915, 1.915)
+_shape = null
+
+[node name="GridClientNode2D2" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-187.665, 106.301)
+
+[node name="GridClientNode2D12" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-116.665, 74.3012)
+rotation = -0.958186
+update_mode = 0
+
+[node name="GridClientNode2D15" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(4.33528, 401.301)
+rotation = -0.958186
+update_mode = 0
+
+[node name="GridClientNode2D13" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(2.33524, 77.3012)
+update_mode = 0
+
+[node name="GridClientNode2D14" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(123.335, 76.3012)
+update_mode = 0
+
+[node name="GridClientNode2D3" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-220.665, 164.301)
+_shape = SubResource("CircleShape2D_xvstb")
+update_mode = 0
+
+[node name="GridClientNode2D4" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-47.6648, 73.3012)
+update_mode = 0
+
+[node name="GridClientNode2D5" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-96.6648, 143.301)
+update_mode = 0
+
+[node name="GridClientNode2D6" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-153.294, 224.564)
+update_mode = 0
+
+[node name="GridClientNode2D7" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-44.6648, 304.301)
+update_mode = 0
+
+[node name="GridClientNode2D8" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(33.3352, 167.301)
+update_mode = 0
+
+[node name="GridClientNode2D9" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(64.3352, 75.3012)
+update_mode = 0
+
+[node name="GridClientNode2D10" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(-283.282, 319.473)
+scale = Vector2(3, 3)
+update_mode = 0
+
+[node name="GridClientNode2D11" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
+position = Vector2(86.3352, 387.301)
+update_mode = 0
+
+[node name="pointer" type="Node2D" parent="." node_paths=PackedStringArray("_grid")]
+position = Vector2(-103, -42)
+script = ExtResource("3_g0kfw")
+_grid = NodePath("../SpatialHashGridNode2d")
+_scan_shape = SubResource("CircleShape2D_mob5v")
