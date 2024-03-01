@@ -117,7 +117,6 @@ func _draw() -> void:
 		_shape.draw(get_canvas_item(), debug_color)
 
 func _update_shape() -> void:
-	print("starting shape update")
 	if not (_grid and _grid_client):
 		return
 		
