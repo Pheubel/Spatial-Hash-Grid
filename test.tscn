@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://brleao5puf2bs"]
+[gd_scene load_steps=7 format=3 uid="uid://brleao5puf2bs"]
 
 [ext_resource type="Script" path="res://SpatialHashGridNode2d.gd" id="1_4rdyc"]
 [ext_resource type="PackedScene" uid="uid://b31tvaochi0ss" path="res://test_client.tscn" id="2_jv0an"]
@@ -10,9 +10,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 209, 98, 0, 0, 0, 0, 277, 113, 0, 0, 0, 0, 322, 150, 0, 0, 0, 0, 335, 210, 0, 0, 0, 0, 278, 287, 0, 0, 0, 0, 191, 221, 0, 0, 0, 0, 156.036, 338.479, 0, 0, 0, 0, -73.6575, 378.616, 0, 0, 0, 0, 45, 219, 0, 0, 0, 0, 92, 131, 0, 0, 0, 0, 209, 98)
 }
 point_count = 11
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xvstb"]
-radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mob5v"]
 
@@ -46,7 +43,6 @@ update_mode = 2
 position = Vector2(-323.346, 175.909)
 rotation = 1.40848
 scale = Vector2(1.915, 1.915)
-_shape = null
 
 [node name="GridClientNode2D2" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
 position = Vector2(-187.665, 106.301)
@@ -71,7 +67,6 @@ update_mode = 0
 
 [node name="GridClientNode2D3" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]
 position = Vector2(-220.665, 164.301)
-_shape = SubResource("CircleShape2D_xvstb")
 update_mode = 0
 
 [node name="GridClientNode2D4" parent="SpatialHashGridNode2d" instance=ExtResource("2_jv0an")]

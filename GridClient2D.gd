@@ -2,7 +2,7 @@ extends RefCounted
 class_name GridClient2D
 
 ## The grid cells this client is stored in, normalized to the grid dimension.
-var overlapping_cells: Rect2i
+var overlapping_cells: Array[ClientCellRecord]
 
 ## Additional data attached to this client.
 ## [br][br]
